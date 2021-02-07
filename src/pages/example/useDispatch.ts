@@ -1,4 +1,4 @@
-import useGenereateDispatch from '@/hooks/useGenereateDispatch';
+import useGenereateDispatch from '../../hooks/useGenereateDispatch';
 
 const configDispatch = {
   test: 'test', // 例子
