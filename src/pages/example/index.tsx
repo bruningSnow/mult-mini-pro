@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { View, Text } from '@tarojs/components';
+import { connectState } from '@/models/index';
 
-import { connectState } from '../../models';
 import useDispatchExample from './useDispatch';
 import './index.scss';
 
@@ -12,7 +12,7 @@ const Index = () => {
 
   useEffect(() => {
     save({ example: '666' });
-    test('gggggg')
+    test('gggggg');
   }, []);
 
   return (
