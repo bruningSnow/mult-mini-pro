@@ -22,10 +22,6 @@
     "typeRoots": ["node_modules/@types", "global.d.ts"],
     "paths": {
       "@/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/utils/*": ["./src/utils/*"],
-      "@/hooks/*": ["./src/hooks/*"],
-      "@/models/*": ["./src/models/*"],
     }
   },
   "exclude": ["node_modules", "dist"],
