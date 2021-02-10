@@ -1,19 +1,15 @@
 export default {
-  pages: [
-    'pages/home/index'
-  ],
-  subPages: [
+  pages: ['pages/example/index'],
+  subPackages: [
     {
       root: 'subPages/',
-      pages: [
-        'detail/index'
-      ],
-    }
+      pages: ['example/index'],
+    },
   ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
+    navigationBarTextStyle: 'black',
   },
-}
+};
