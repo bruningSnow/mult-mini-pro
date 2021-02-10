@@ -18,9 +18,15 @@ const config = {
     options: {},
   },
   framework: 'react',
-  alias: {
-    '@/*': resolve(__dirname, '..', 'src'),
-  },
+  // alias: {
+  //   // '@/*': resolve(__dirname, '..', 'src'),
+  //   '@/models/*': resolve(__dirname, '..', 'src/models'),
+  //   '@/utils/*': resolve(__dirname, '..', 'src/utils'),
+  //   '@/subPages/*': resolve(__dirname, '..', 'src/subPages'),
+  //   '@/components/*': resolve(__dirname, '..', 'src/components'),
+  //   '@/hooks/*': resolve(__dirname, '..', 'src/hooks'),
+  //   '@/assets/*': resolve(__dirname, '..', 'src/assets'),
+  // },
   mini: {
     postcss: {
       pxtransform: {

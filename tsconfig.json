@@ -20,9 +20,15 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": ["node_modules/@types", "global.d.ts"],
-    "paths": {
-      "@/*": ["./src/*"],
-    }
+    // "paths": {
+    //   // "@/*": ["./src/*"],
+    //   "@/models/*": ["./src/models/*"],
+    //   "@/utils/*": ["./src/utils/*"],
+    //   "@/subPages/*": ["./src/subPages/*"],
+    //   "@/components/*": ["./src/components/*"],
+    //   "@/hooks/*": ["./src/hooks/*"],
+    //   "@/assets/*": ["./src/assets/*"],
+    // }
   },
   "exclude": ["node_modules", "dist"],
   "compileOnSave": false
