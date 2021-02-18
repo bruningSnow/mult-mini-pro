@@ -1,11 +1,5 @@
 export default {
-  pages: ['pages/example/index'],
-  subPackages: [
-    {
-      root: 'subPages/',
-      pages: ['example/index'],
-    },
-  ],
+  pages: ['pages/home/index'],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',

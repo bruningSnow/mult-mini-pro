@@ -44,12 +44,14 @@
     "@tarojs/taro": "3.0.17",
     "dva-core": "^2.0.4",
     "dva-loading": "^3.0.22",
+    "nervjs": "^1.5.7",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "taro-ui": "^3.0.0-alpha.3"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

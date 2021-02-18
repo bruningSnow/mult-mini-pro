@@ -11,6 +11,7 @@ module.exports = {
   },
   mini: {},
   h5: {
+    esnextModules: ['taro-ui'],
     devServer: {
       proxy: {
         '/api/': {
