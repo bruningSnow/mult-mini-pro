@@ -1,0 +1,14 @@
+@import "~taro-ui/dist/style/index.scss";
+
+page {
+  background: rgb(246, 246, 246);
+}
+
+view {
+  font-family: PingFang SC-Regular, PingFang SC;
+  box-sizing: border-box;
+  display: block;
+}
+button::after {
+  border: 0;
+}

@@ -1,0 +1,29 @@
+.index {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 60px 20px 0;
+  width: 100%;
+  color: rgb(23, 23, 23);
+  z-index: 9999999;
+
+  .icon {
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    transform: translate(0, -30%);
+    border: none;
+    box-shadow: none;
+  }
+
+  .text {
+    text-align: center;
+    flex: 1;
+    font-family: -apple-system-font, BlinkMacSystemFont, "Helvetica Neue",
+      "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei",
+      Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+  }
+}
