@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState } from "react";
+import React, { CSSProperties, useState, ReactNode } from "react";
 import Taro from "@tarojs/taro";
 import { View } from "@tarojs/components";
 import Classnames from "classnames";
@@ -9,6 +9,10 @@ import styles from "./index.module.scss";
 
 const defaultProps = {
   text: "小程序模版",
+  isFixed: true,
+  textColor: "rgb(23, 23, 23)",
+  backColor: "rgb(23, 23, 23)",
+  background: "white",
 };
 
 export interface PageNavProps {
@@ -18,7 +22,9 @@ export interface PageNavProps {
   textColor?: CSSProperties["color"];
   hasBack?: boolean;
   backColor?: CSSProperties["color"];
+  background?: CSSProperties["color"];
   isFixed?: boolean;
+  extraNode?: ReactNode;
 }
 
 export const PageNav: React.FC<PageNavProps> = (props) => {
@@ -26,9 +32,12 @@ export const PageNav: React.FC<PageNavProps> = (props) => {
     className,
     style,
     text,
-    textColor = "rgb(23, 23, 23)",
-    backColor = "rgb(23, 23, 23)",
+    textColor,
+    backColor,
+    background,
     hasBack,
+    isFixed,
+    extraNode,
   } = props;
   const [NavBarHeight, setNavBarHeight] = useState<number>(0);
   const [NavBarPaddingTop, setNavBarPaddingTop] = useState<number>(0);
@@ -51,12 +60,14 @@ export const PageNav: React.FC<PageNavProps> = (props) => {
     <View
       className={Classnames(styles.index, className)}
       style={{
+        background,
         ...(style || {}),
-        position: "fixed",
+        position: isFixed ? "fixed" : "relative",
         height: `${NavBarHeight}px`,
         paddingTop: `${NavBarPaddingTop}px`,
       }}
     >
+      {props.children}
       {hasBack && (
         <AtIcon
           onClick={() => Taro.navigateBack()}
@@ -66,9 +77,12 @@ export const PageNav: React.FC<PageNavProps> = (props) => {
           className={styles.icon}
         />
       )}
-      <View style={{ color: textColor }} className={styles.text}>
-        {text}
-      </View>
+      {text && (
+        <View style={{ color: textColor }} className={styles.text}>
+          {text}
+        </View>
+      )}
+      {extraNode}
     </View>
   );
 };
