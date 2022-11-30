@@ -1,13 +1,13 @@
 export default defineAppConfig({
   pages: ["pages/home/index", "pages/shopcar/index", "pages/my/index"],
-  subpackages: [
-    {
-      root: "subpackages",
-      name: "login",
-      pages: [],
-      independent: false,
-    },
-  ],
+  // subpackages: [
+  //   {
+  //     root: "subpackages",
+  //     name: "login",
+  //     pages: [],
+  //     independent: false,
+  //   },
+  // ],
   window: {
     backgroundTextStyle: "light",
     navigationBarBackgroundColor: "#fff",
