@@ -1,6 +1,6 @@
 export default definePageConfig({
   navigationStyle: "custom",
-  enablePullDownRefresh: true,
+  enablePullDownRefresh: false,
   onReachBottomDistance: 150,
   navigationBarBackgroundColor: "#ededed",
 });

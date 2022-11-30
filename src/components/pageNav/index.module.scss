@@ -7,6 +7,8 @@
   width: 100%;
   color: rgb(23, 23, 23);
   z-index: 9999999;
+  top: 0;
+  overflow: hidden;
 
   .icon {
     position: absolute;

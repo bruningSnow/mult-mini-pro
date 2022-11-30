@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { PageContainer } from "@/components/index";
+import { View } from "@tarojs/components";
 import styles from "./index.module.scss";
 
 interface IState {
@@ -29,7 +30,11 @@ class My extends Component<IObject, IState> {
   }
 
   render() {
-    return <PageContainer className={styles.index}>我的页面</PageContainer>;
+    return (
+      <PageContainer className={styles.index}>
+        <View className={styles.content}>内容</View>
+      </PageContainer>
+    );
   }
 }
 

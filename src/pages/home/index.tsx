@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { PageContainer } from "@/components/index";
+import { View } from "@tarojs/components";
 import styles from "./index.module.scss";
 
 class Home extends Component {
@@ -22,7 +23,11 @@ class Home extends Component {
   }
 
   render() {
-    return <PageContainer className={styles.index}>home 页面</PageContainer>;
+    return (
+      <PageContainer>
+        <View className={styles.content}>内容</View>
+      </PageContainer>
+    );
   }
 }
 

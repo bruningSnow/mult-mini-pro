@@ -1,8 +1,8 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "guniao",
-  "description": "孤鸟",
-  "appid": "wxbd2004509158c9be",
+  "projectname": "小程序模版",
+  "description": "",
+  "appid": "wxb2d34f69d701e47e",
   "setting": {
     "urlCheck": true,
     "es6": false,

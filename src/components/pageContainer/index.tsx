@@ -119,30 +119,26 @@ export const PageContainer: React.FC<PageContainerProps> = (props) => {
   });
 
   return (
-    <View className={Classnames(styles.index, className)} style={style}>
-      <View
-        className={styles.pageContent}
-        style={{
-          minHeight: hasMenu ? "calc(100vh - 101px)" : "100vh",
-        }}
-      >
-        {hasPageNav && <PageNav {...pageNavProps} />}
+    <View
+      className={Classnames(styles.index, className)}
+      style={{
+        paddingBottom: hasMenu
+          ? "calc(123rpx + env(safe-area-inset-bottom))"
+          : "0",
+        paddingTop:
+          hasPageNav && pageNavProps?.isFixed ? `${NavBarHeight}px` : "0px",
+        ...(style || {}),
+      }}
+    >
+      {hasPageNav && <PageNav {...pageNavProps} />}
+      {props.children}
+      {!user.phone && (
         <View
-          style={{
-            paddingTop:
-              hasPageNav && pageNavProps?.isFixed ? `${NavBarHeight}px` : "0px",
-          }}
-        >
-          {props.children}
-        </View>
-        {!user.phone && (
-          <View
-            className={styles.mark}
-            onClick={() => setIsOpened(true)}
-            style={{ zIndex: isOpened ? 1 : 9999 }}
-          />
-        )}
-      </View>
+          className={styles.mark}
+          onClick={() => setIsOpened(true)}
+          style={{ zIndex: isOpened ? 1 : 9999 }}
+        />
+      )}
     </View>
   );
 };
