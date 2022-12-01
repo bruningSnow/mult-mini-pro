@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { PageContainer } from "@/components/index";
+import { PageContainer, FlexItem } from "@/components/index";
 import { View } from "@tarojs/components";
 import styles from "./index.module.scss";
 
