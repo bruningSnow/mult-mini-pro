@@ -1,8 +1,10 @@
+import Taro, {
+  useDidShow,
+  getMenuButtonBoundingClientRect,
+} from "@tarojs/taro";
 import React, { CSSProperties, useState, ReactNode } from "react";
-import Taro from "@tarojs/taro";
 import { View } from "@tarojs/components";
 import Classnames from "classnames";
-import { useDidShow, getMenuButtonBoundingClientRect } from "@tarojs/taro";
 import { AtIcon } from "taro-ui";
 
 import styles from "./index.module.scss";

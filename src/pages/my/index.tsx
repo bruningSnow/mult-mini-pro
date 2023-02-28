@@ -3,16 +3,12 @@ import { PageContainer } from "@/components/index";
 import { View } from "@tarojs/components";
 import styles from "./index.module.scss";
 
-interface IState {
-  isOpened: boolean;
-}
+interface IState {}
 
 class My extends Component<IObject, IState> {
   constructor(props) {
     super(props);
-    this.state = {
-      isOpened: false,
-    };
+    this.state = {};
   }
 
   onShareAppMessage() {
@@ -32,7 +28,7 @@ class My extends Component<IObject, IState> {
   render() {
     return (
       <PageContainer className={styles.index}>
-        <View className={styles.content}>内容</View>
+        <View className={styles.content}>内容2</View>
       </PageContainer>
     );
   }

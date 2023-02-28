@@ -64,14 +64,14 @@ const request = (par: Omit<TRequest, "success" | "fail">) => {
           Taro.hideLoading();
         }
 
-        const data = successCallbackResult.data;
-        if (data && !data.success && data.msg) {
+        const apiData = successCallbackResult.data;
+        if (apiData && !apiData.success && apiData.msg) {
           Taro.showToast({
-            title: data.msg,
+            title: apiData.msg,
             icon: "error",
           });
         }
-        resolve(successCallbackResult.data);
+        resolve(apiData);
       },
       fail: (failCallbackResult: IObject) => {
         if (need_loading) {

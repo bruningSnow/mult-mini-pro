@@ -1,11 +1,12 @@
 import { Component } from "react";
-import { PageContainer, FlexItem } from "@/components/index";
+import { PageContainer } from "@/components/index";
 import { View } from "@tarojs/components";
 import styles from "./index.module.scss";
 
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   onShareAppMessage() {
@@ -25,7 +26,7 @@ class Home extends Component {
   render() {
     return (
       <PageContainer>
-        <View className={styles.content}>内容</View>
+        <View className={styles.content}>内容1</View>
       </PageContainer>
     );
   }

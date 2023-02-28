@@ -1,7 +1,8 @@
 import Taro from "@tarojs/taro";
+import { IState } from "../app";
 
 interface IApp extends IObject {
-  state: {};
+  state: IState;
   checkVersion: () => void;
   wxLogin: () => void;
   checkSession: () => void;

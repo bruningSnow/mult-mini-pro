@@ -2,17 +2,30 @@ import { Component } from "react";
 import { Provider } from "react-redux";
 import Taro from "@tarojs/taro";
 import configStore from "./store";
-import { checkOpenId } from "./utils/utils";
 import {} from "./services/index";
 import "./app.scss";
 
+export interface IState {
+  open_id: string;
+  scene: number;
+  session_key: string;
+}
+
+/* eslint-disable */
+
 const store = configStore();
 
-class App extends Component {
+class App extends Component<IObject, IState> {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      open_id: "",
+      scene: 0,
+      session_key: "",
+    };
   }
+
+  componentDidMount() {}
 
   /**
    * 检查版本
@@ -25,7 +38,7 @@ class App extends Component {
         // 请求完新版本信息的回调
       });
       updateManager.onUpdateReady(function () {
-        React.api.showModal({
+        Taro.showModal({
           title: "更新提示",
           content: "新版本已经准备好，是否重启应用？",
           success: function (res) {
@@ -60,16 +73,13 @@ class App extends Component {
    * 判断storage是否存在open_id，若存在去验证open_id是否有效，不存在去登陆
    */
   checkSession() {
-    // const scene = Taro.getStorageSync("scene");
-    // if (scene === 1154) return; //朋友圈内打开“单页模式”
-
     Taro.checkSession({
       success: () => {},
       fail: () => this.wxLogin(),
     });
   }
 
-  onLaunch(options) {
+  onLaunch() {
     Taro.clearStorage();
   }
 
@@ -81,14 +91,6 @@ class App extends Component {
       url: "/pages/home/index",
     });
   }
-
-  /**
-   * 错误监控上报
-   * @param {*} err
-   */
-  onError(err) {}
-
-  componentDidMount() {}
 
   componentDidShow(options) {
     const { scene } = options;
@@ -102,6 +104,8 @@ class App extends Component {
   componentDidHide() {}
 
   componentDidCatchError() {}
+
+  onError() {}
 
   // this.props.children 是将要会渲染的页面
   render() {
