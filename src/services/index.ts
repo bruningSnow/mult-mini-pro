@@ -3,7 +3,7 @@ import http from "./http";
 type TConfig = Omit<Parameters<typeof http>[0], "url" | "data">;
 
 // 获取接口的 示例
-export const queryBaseUrl = (data, config?: TConfig) =>
+export const queryBaseUrl = (data?: any, config?: TConfig) =>
   http({
     url: "https://path",
     data,
