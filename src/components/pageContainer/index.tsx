@@ -14,25 +14,25 @@ import styles from "./index.module.scss";
 const tabBar = ["pages/home/index", "pages/shopcar/index", "pages/my/index"];
 
 const defaultProps: PageContainerProps = {
-  hasPageNav: true,
+  showPageNav: true,
   pageNavProps: {
     isFixed: true,
   },
+  showMark: false,
 };
 
 export interface PageContainerProps {
   className?: string;
   style?: CSSProperties;
-  hasPageNav?: boolean;
+  showPageNav?: boolean;
+  showMark?: boolean;
   pageNavProps?: PageNavProps;
 }
 
 export const PageContainer: React.FC<PageContainerProps> = (props) => {
   const dispatch = useDispatch();
-  const { className, style, hasPageNav, pageNavProps } = props;
-  const { user, currentPath } = useSelector(
-    (state: ConnectState) => state.global
-  );
+  const { className, style, showPageNav, pageNavProps, showMark } = props;
+  const { currentPath } = useSelector((state: ConnectState) => state.global);
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [NavBarHeight, setNavBarHeight] = useState<number>(0);
 
@@ -88,18 +88,6 @@ export const PageContainer: React.FC<PageContainerProps> = (props) => {
     });
   };
 
-  /**
-   * 获取当前用户信息
-   */
-  const getUserInformation = () => {
-    setTimeout(() => {
-      dispatch({
-        type: "global/save",
-        payload: { user: { ...user, phone: "" } },
-      });
-    }, 1000);
-  };
-
   // 获取 NavBar 高度（适配不同机型）
   const getNavBarHeight = () => {
     const menuButtonInfo = getMenuButtonBoundingClientRect(); //胶囊相关信息
@@ -114,7 +102,6 @@ export const PageContainer: React.FC<PageContainerProps> = (props) => {
         payload: { networkType, ...getRouters(), ...getLocalData() },
       });
     });
-    getUserInformation();
     getNavBarHeight();
   });
 
@@ -126,13 +113,13 @@ export const PageContainer: React.FC<PageContainerProps> = (props) => {
           ? "calc(123rpx + env(safe-area-inset-bottom))"
           : "0",
         paddingTop:
-          hasPageNav && pageNavProps?.isFixed ? `${NavBarHeight}px` : "0px",
+          showPageNav && pageNavProps?.isFixed ? `${NavBarHeight}px` : "0px",
         ...(style || {}),
       }}
     >
-      {hasPageNav && <PageNav {...pageNavProps} />}
+      {showPageNav && <PageNav {...pageNavProps} />}
       {props.children}
-      {!user.phone && (
+      {showMark && (
         <View
           className={styles.mark}
           onClick={() => setIsOpened(true)}

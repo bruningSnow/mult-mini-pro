@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { PageContainer } from "@/components/index";
+import { PageContainer, ScrollList } from "@/components/index";
 import { View } from "@tarojs/components";
 import styles from "./index.module.scss";
 
@@ -26,7 +26,9 @@ class Home extends Component {
   render() {
     return (
       <PageContainer>
-        <View className={styles.content}>内容1</View>
+        <ScrollList>
+          <View className={styles.content}>内容1</View>
+        </ScrollList>
       </PageContainer>
     );
   }

@@ -22,7 +22,7 @@ export interface PageNavProps {
   style?: CSSProperties;
   text?: string;
   textColor?: CSSProperties["color"];
-  hasBack?: boolean;
+  showBack?: boolean;
   backColor?: CSSProperties["color"];
   background?: CSSProperties["color"];
   isFixed?: boolean;
@@ -37,7 +37,7 @@ export const PageNav: React.FC<PageNavProps> = (props) => {
     textColor,
     backColor,
     background,
-    hasBack,
+    showBack,
     isFixed,
     extraNode,
   } = props;
@@ -70,7 +70,7 @@ export const PageNav: React.FC<PageNavProps> = (props) => {
       }}
     >
       {props.children}
-      {hasBack && (
+      {showBack && (
         <AtIcon
           onClick={() => Taro.navigateBack()}
           value="chevron-left"
