@@ -1,5 +1,5 @@
 export * from "./pageContainer";
 export * from "./pageNav";
-export * from "./swiperList";
 export * from "./flexItem";
 export * from "./scrollList";
+export * from "./swipeAction";

@@ -107,7 +107,7 @@ export const PageContainer: React.FC<PageContainerProps> = (props) => {
 
   return (
     <View
-      className={Classnames(styles.index, className)}
+      className={Classnames(styles["page-container"], className)}
       style={{
         paddingBottom: hasMenu
           ? "calc(123rpx + env(safe-area-inset-bottom))"

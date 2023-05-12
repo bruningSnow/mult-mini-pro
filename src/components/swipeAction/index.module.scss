@@ -1,0 +1,39 @@
+.swipe-action {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  :global {
+    .swipe-action__area {
+      height: auto;
+    }
+
+    .swipe-action__content {
+      position: relative;
+      font-size: 32rpx;
+      background-color: #fff;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .swipe-action__options {
+      webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-align: center;
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      z-index: 1;
+      opacity: 1;
+      overflow: hidden;
+    }
+  }
+}

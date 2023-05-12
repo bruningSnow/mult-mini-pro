@@ -60,7 +60,7 @@ export const PageNav: React.FC<PageNavProps> = (props) => {
 
   return (
     <View
-      className={Classnames(styles.index, className)}
+      className={Classnames(styles["page-nav"], className)}
       style={{
         background,
         ...(style || {}),

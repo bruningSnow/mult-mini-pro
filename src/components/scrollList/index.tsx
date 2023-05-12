@@ -1,27 +1,43 @@
-import React, { CSSProperties, useState } from "react";
-import { View, ScrollView } from "@tarojs/components";
+import React, { useState, ReactNode } from "react";
+import { View, ScrollView, ScrollViewProps } from "@tarojs/components";
 import Classnames from "classnames";
 
 import styles from "./index.module.scss";
 
-export interface ScrollListProps {
-  className?: string;
-  style?: CSSProperties;
+export interface ScrollListProps
+  extends Omit<ScrollViewProps, "refresherTriggered" | "onRefresherRefresh"> {
+  refresherNode?: ReactNode;
+  onRefresherRefresh?: (arg?: any) => Promise<any>;
 }
 
 export const ScrollList: React.FC<ScrollListProps> = (props) => {
-  const { className, style } = props;
+  const {
+    className,
+    style,
+    refresherNode,
+    onRefresherPulling,
+    onRefresherRefresh,
+    ...rest
+  } = props;
   const [refresherTriggered, setRefresherTriggered] = useState(true);
 
-  const refresh = () => {
-    setTimeout(() => {
+  const innerRefresherPulling = (...arg: [any]) => {
+    onRefresherPulling?.(...arg);
+    setRefresherTriggered(true);
+  };
+
+  const innerRefresherRefresh = async (...arg: [any]) => {
+    try {
+      await onRefresherRefresh?.(...arg);
       setRefresherTriggered(false);
-    }, 1000);
+    } catch (error) {
+      setRefresherTriggered(false);
+    }
   };
 
   return (
     <ScrollView
-      className={Classnames(styles.index, className)}
+      className={Classnames(styles["scroll-list"], className)}
       style={style}
       scrollY
       refresherEnabled
@@ -29,20 +45,15 @@ export const ScrollList: React.FC<ScrollListProps> = (props) => {
       showScrollbar={false}
       refresherTriggered={refresherTriggered}
       refresherDefaultStyle="none"
-      onRefresherPulling={() => {
-        console.log("onRefresherPulling");
-        setRefresherTriggered(true);
-      }}
-      onRefresherRefresh={() => {
-        console.log("onRefresherRefresh");
-        refresh();
-      }}
-      // onRefresherRestore={() => console.log("onRefresherRestore")}
-      // onRefresherAbort={() => console.log("onRefresherAbort")}
+      onRefresherPulling={innerRefresherPulling}
+      onRefresherRefresh={innerRefresherRefresh}
+      {...rest}
     >
-      <View className={styles["refresh-container"]}>
-        <View>下拉刷新</View>
-      </View>
+      {refresherNode || (
+        <View className={styles["refresh-container"]}>
+          <View>下拉刷新</View>
+        </View>
+      )}
       <View>{props.children}</View>
     </ScrollView>
   );

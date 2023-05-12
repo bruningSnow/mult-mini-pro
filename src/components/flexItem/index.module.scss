@@ -1,4 +1,4 @@
-.index {
+.flex-item {
   position: relative;
   display: flex;
   width: 100%;
@@ -7,7 +7,7 @@
   justify-content: space-between;
 }
 
-.indexDivader::after {
+.flex-item::after {
   content: "";
   position: absolute;
   width: 100%;

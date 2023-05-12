@@ -43,7 +43,7 @@ export const FlexItem: React.FC<FlexItemProps> = (props) => {
 
   return (
     <View
-      className={Classnames(styles.index, innerClass)}
+      className={Classnames(styles["flex-item"], innerClass)}
       style={innerStyle}
       onClick={onClick}
     >

@@ -1,7 +1,6 @@
 import { Component } from "react";
-import { PageContainer, ScrollList } from "@/components/index";
+import { PageContainer, ScrollList, SwipeAction } from "@/components/index";
 import { View } from "@tarojs/components";
-import styles from "./index.module.scss";
 
 class Home extends Component {
   constructor(props) {
@@ -23,11 +22,29 @@ class Home extends Component {
     };
   }
 
+  onRefresherRefresh = async () => {
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 300);
+    });
+  };
+
   render() {
     return (
       <PageContainer>
-        <ScrollList>
-          <View className={styles.content}>内容1</View>
+        <ScrollList onRefresherRefresh={this.onRefresherRefresh}>
+          <View style={{ width: "50vw" }}>
+            <SwipeAction
+              onClick={() => console.log("uuu")}
+              rightNode={
+                <View onClick={() => console.log("hahah")}>hahah</View>
+              }
+              maxDistance={100}
+            >
+              111
+            </SwipeAction>
+          </View>
         </ScrollList>
       </PageContainer>
     );
