@@ -128,8 +128,9 @@ export const SwipeAction: React.FC<SwipeActionProps> = (props) => {
             left: `${maxDistance}px`,
           }}
           direction="horizontal"
-          damping={50}
+          damping={40}
           x={offsetSize}
+          animation
           onTouchEnd={onTouchEnd}
           onChange={onChange}
         >
