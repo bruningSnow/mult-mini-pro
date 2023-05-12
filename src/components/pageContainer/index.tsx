@@ -36,6 +36,10 @@ export const PageContainer: React.FC<PageContainerProps> = (props) => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [NavBarHeight, setNavBarHeight] = useState<number>(0);
 
+  const innerPageNavProps = useMemo<PageNavProps>(() => {
+    return { isFixed: true, ...(pageNavProps || {}) };
+  }, [pageNavProps]);
+
   const hasMenu = useMemo(() => {
     return tabBar.includes(currentPath);
   }, [currentPath]);
@@ -113,11 +117,13 @@ export const PageContainer: React.FC<PageContainerProps> = (props) => {
           ? "calc(123rpx + env(safe-area-inset-bottom))"
           : "0",
         paddingTop:
-          showPageNav && pageNavProps?.isFixed ? `${NavBarHeight}px` : "0px",
+          showPageNav && innerPageNavProps?.isFixed
+            ? `${NavBarHeight}px`
+            : "0px",
         ...(style || {}),
       }}
     >
-      {showPageNav && <PageNav {...pageNavProps} />}
+      {showPageNav && <PageNav {...innerPageNavProps} />}
       {props.children}
       {showMark && (
         <View
