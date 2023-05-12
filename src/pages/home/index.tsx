@@ -1,6 +1,5 @@
 import { Component } from "react";
-import { PageContainer, ScrollList, SwipeAction } from "@/components/index";
-import { View } from "@tarojs/components";
+import { PageContainer } from "@/components/index";
 
 class Home extends Component {
   constructor(props) {
@@ -31,23 +30,7 @@ class Home extends Component {
   };
 
   render() {
-    return (
-      <PageContainer>
-        <ScrollList onRefresherRefresh={this.onRefresherRefresh}>
-          <View style={{ width: "50vw" }}>
-            <SwipeAction
-              onClick={() => console.log("uuu")}
-              rightNode={
-                <View onClick={() => console.log("hahah")}>hahah</View>
-              }
-              maxDistance={100}
-            >
-              111
-            </SwipeAction>
-          </View>
-        </ScrollList>
-      </PageContainer>
-    );
+    return <PageContainer>首页</PageContainer>;
   }
 }
 
