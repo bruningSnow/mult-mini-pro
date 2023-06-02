@@ -1,8 +1,8 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "小程序模版",
-  "description": "",
-  "appid": "wxb2d34f69d701e47e",
+  "projectname": "mult-mini-pro",
+  "description": "taro 多端模版",
+  "appid": "wxf77eb6a9341ac1ce",
   "setting": {
     "urlCheck": true,
     "es6": false,
