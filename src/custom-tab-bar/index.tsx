@@ -74,7 +74,7 @@ export const Menu: React.FC<MenuProps> = (props) => {
 
   return (
     <View
-      className={Classnames(styles.index, className)}
+      className={Classnames(styles["menu-container"], className)}
       id="tab-bar"
       style={style}
     >

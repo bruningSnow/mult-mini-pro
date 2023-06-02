@@ -1,4 +1,10 @@
-.content {
-  width: 100%;
-  height: 100vh;
+.home {
+  padding: 20px;
+  .component-item {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #ffffff;
+  }
 }

@@ -1,8 +1,8 @@
 {
-  "name": "xiaodian",
+  "name": "mult-mini-pro",
   "version": "1.0.0",
   "private": true,
-  "description": "那小店",
+  "description": "小程序多端模版",
   "templateInfo": {
     "name": "default",
     "typescript": true,

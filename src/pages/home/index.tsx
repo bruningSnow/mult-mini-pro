@@ -1,5 +1,28 @@
 import { Component } from "react";
+import Taro from "@tarojs/taro";
+import { View } from "@tarojs/components";
 import { PageContainer } from "@/components/index";
+
+import styles from "./index.module.scss";
+
+const componentPageList = [
+  {
+    label: "PageContainer",
+    url: "",
+  },
+  {
+    label: "PageNav",
+    url: "",
+  },
+  {
+    label: "ScrollList",
+    url: "",
+  },
+  {
+    label: "SwipeAction",
+    url: "",
+  },
+];
 
 class Home extends Component {
   constructor(props) {
@@ -7,30 +30,22 @@ class Home extends Component {
     this.state = {};
   }
 
-  onShareAppMessage() {
-    return {
-      title: "模版小程序",
-      path: "/pages/home/index",
-    };
-  }
-
-  onShareTimeline() {
-    return {
-      text: "模版小程序",
-      pagePath: "/pages/home/index",
-    };
-  }
-
-  onRefresherRefresh = async () => {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(1);
-      }, 300);
-    });
-  };
-
   render() {
-    return <PageContainer>首页</PageContainer>;
+    return (
+      <PageContainer>
+        <View className={styles.home}>
+          {componentPageList.map(({ label, url }, index) => (
+            <View
+              key={index}
+              className={styles["component-item"]}
+              onClick={() => Taro.navigateTo({ url })}
+            >
+              {label}
+            </View>
+          ))}
+        </View>
+      </PageContainer>
+    );
   }
 }
 
