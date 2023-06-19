@@ -33,7 +33,6 @@ class Home extends Component {
   render() {
     return (
       <PageContainer>
-        测试
         <View className={styles.home}>
           {componentPageList.map(({ label, url }, index) => (
             <View

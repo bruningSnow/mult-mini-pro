@@ -62,10 +62,9 @@ $ yarn run dev:weapp
 ## 模版自带组件
 
 - custom-tab-bar
-- flexItem
 - pageContainer
 - pageNav
-- spin
+- scrollList
 - swipeAction
 
 ## 注意事项
