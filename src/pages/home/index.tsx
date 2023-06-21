@@ -36,7 +36,7 @@ class Home extends Component {
 
   render() {
     return (
-      <PageContainer>
+      <PageContainer showMark>
         <View className={styles.home}>
           {componentPageList.map(({ label, url }, index) => (
             <View

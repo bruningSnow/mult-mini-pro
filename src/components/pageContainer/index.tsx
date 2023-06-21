@@ -24,8 +24,8 @@ const defaultProps: PageContainerProps = {
 export interface PageContainerProps {
   className?: string;
   style?: CSSProperties;
-  showPageNav?: boolean;
-  showMark?: boolean;
+  showPageNav?: boolean; // 是否展示页面 nav
+  showMark?: boolean; // 是否开启页面透明 mark，禁止点击页面内容
   pageNavProps?: PageNavProps;
 }
 
@@ -129,7 +129,7 @@ export const PageContainer: React.FC<PageContainerProps> = (props) => {
         <View
           className={styles.mark}
           onClick={() => setIsOpened(true)}
-          style={{ zIndex: isOpened ? 1 : 9999 }}
+          style={{ zIndex: isOpened ? 1 : 999999 }}
         />
       )}
     </View>
