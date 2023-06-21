@@ -10,7 +10,7 @@ export interface ActionSheetProps {
   className?: string;
   style?: CSSProperties;
   visible?: boolean; // 是否展示下拉弹窗
-  contentStyle?: CSSProperties;
+  contentStyle?: CSSProperties; //  弹窗内容高度
   contentHeight?: CSSProperties["height"]; // 弹窗内容高度
   onClose?: TBaseFun; // 滑块关闭回调
 }

@@ -12,7 +12,7 @@ export interface SwipeActionProps {
   style?: CSSProperties;
   isOpened?: boolean; // 是否展示右侧操作块
   autoClose?: boolean; // 点击操作块是否自动关闭展示
-  maxDistance?: number; // 操作块宽度
+  maxDistance?: number; // 操作块宽度（单位 px）
   moveRatio?: number; // 滑块滑动临界比例
   rightNode?: ReactNode; // 右侧滑块
   onOpened?: TBaseFun; // 滑块展示回调
@@ -20,6 +20,10 @@ export interface SwipeActionProps {
   onClick?: TBaseFun;
 }
 
+/**
+ *  参考组件实现方式
+ * https://github.com/jdf2e/nutui-react/blob/next/src/packages/swipe/swipe.tsx
+ */
 export const SwipeAction: React.FC<SwipeActionProps> = (props) => {
   const {
     className,
@@ -60,18 +64,21 @@ export const SwipeAction: React.FC<SwipeActionProps> = (props) => {
 
   const handleOpened = (event) => {
     if (typeof onOpened === "function") {
+      _reset(true);
       onOpened(event);
     }
   };
 
   const handleClosed = (event) => {
     if (typeof onClosed === "function") {
+      _reset(false);
       onClosed(event);
     }
   };
 
   const handleClick = (e) => {
     e.stopPropagation();
+    console.log("autoClose =>", autoClose);
     if (autoClose) {
       _reset(false); // TODO: Check behavior
       handleClosed(e);
@@ -125,11 +132,11 @@ export const SwipeAction: React.FC<SwipeActionProps> = (props) => {
           className="swipe-action__content"
           style={{
             width: `calc(100% - ${maxDistance}px)`,
-            left: `${maxDistance}px`,
+            right: `${maxDistance}px`,
           }}
           direction="horizontal"
           damping={40}
-          x={offsetSize}
+          x={-offsetSize}
           animation
           onTouchEnd={onTouchEnd}
           onChange={onChange}

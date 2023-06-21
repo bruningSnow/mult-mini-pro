@@ -6,10 +6,15 @@ import styles from "./index.module.scss";
 
 export interface ScrollListProps
   extends Omit<ScrollViewProps, "refresherTriggered" | "onRefresherRefresh"> {
-  refresherNode?: ReactNode;
+  refresherNode?: ReactNode; // 下拉刷新自定义 ReactNode
   onRefresherRefresh?: (arg?: any) => Promise<any>;
 }
 
+/**
+ * 注意，refresherNode 的高度和 top 的绝对值一定要相同，例如：
+ * height: 80px; top: -80px
+ * 且定位须为 position: absolute
+ */
 export const ScrollList: React.FC<ScrollListProps> = (props) => {
   const {
     className,
@@ -49,10 +54,12 @@ export const ScrollList: React.FC<ScrollListProps> = (props) => {
       onRefresherRefresh={innerRefresherRefresh}
       {...rest}
     >
-      {refresherNode || (
+      {refresherNode === undefined ? (
         <View className={styles["refresh-container"]}>
           <View>下拉刷新</View>
         </View>
+      ) : (
+        refresherNode
       )}
       <View>{props.children}</View>
     </ScrollView>

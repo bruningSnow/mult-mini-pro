@@ -37,7 +37,7 @@
         |-- index.html                      # h5 外部文件
         |-- asset                           # 本地静态资源
         |-- components                      # 业务通用组件
-        |-- componentsExample               # 组件示例页面
+        |-- subpackages                     # 组件示例页面
         |-- models                          # 全局 model
         |-- pages                           # 页面文件目录
         |-- utils                           # 全局方法文件目录
@@ -76,6 +76,6 @@ $ yarn run dev:weapp
 
 ## 示例小程序
 
-### 名称：taro 多端组件 </br>
+### 名称：郝兜兜的组件库 </br>
 
 ![TARO组件](https://img-blog.csdnimg.cn/20210325104338271.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2gxMjM0NTYxMjM0NTYx,size_16,color_FFFFFF,t_70#pic_center)

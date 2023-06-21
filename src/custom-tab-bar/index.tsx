@@ -34,21 +34,21 @@ const defaultProps = {
         marginTop: "2px",
       },
     },
-    {
-      activity_id: 16635,
-      page_name: "商城",
-      path_url: "pages/shopcar/index",
-      target_type: "shopPages",
-      thumbnail_url:
-        "https://udh.oss-cn-hangzhou.aliyuncs.com/53c5f076-41eb-43dc-8fc7-74bb2ba26baf78359980851.png",
-      active:
-        "https://udh.oss-cn-hangzhou.aliyuncs.com/9b318ee1-8682-46d2-958f-9d8ddaa5670167835998058.png",
-      style: {
-        width: "25px",
-        height: "11px",
-        marginTop: "2px",
-      },
-    },
+    // {
+    //   activity_id: 16635,
+    //   page_name: "商城",
+    //   path_url: "pages/shopcar/index",
+    //   target_type: "shopPages",
+    //   thumbnail_url:
+    //     "https://udh.oss-cn-hangzhou.aliyuncs.com/53c5f076-41eb-43dc-8fc7-74bb2ba26baf78359980851.png",
+    //   active:
+    //     "https://udh.oss-cn-hangzhou.aliyuncs.com/9b318ee1-8682-46d2-958f-9d8ddaa5670167835998058.png",
+    //   style: {
+    //     width: "25px",
+    //     height: "11px",
+    //     marginTop: "2px",
+    //   },
+    // },
     {
       activity_id: 16636,
       page_name: "个人中心",

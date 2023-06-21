@@ -13,14 +13,14 @@ class My extends Component<IObject, IState> {
 
   onShareAppMessage() {
     return {
-      title: "模版小程序",
+      title: "郝兜兜的组件库",
       path: "/pages/my/index",
     };
   }
 
   onShareTimeline() {
     return {
-      text: "模版小程序",
+      text: "郝兜兜的组件库",
       pagePath: "/pages/my/index",
     };
   }

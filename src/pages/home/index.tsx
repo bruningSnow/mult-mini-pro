@@ -5,28 +5,36 @@ import { PageContainer } from "@/components/index";
 
 import styles from "./index.module.scss";
 
-const componentPageList = [
+let componentPageList = [
   {
     label: "PageContainer",
-    url: "",
+    url: "/subpackages/pageContainer/index",
   },
   {
     label: "PageNav",
-    url: "",
-  },
-  {
-    label: "ScrollList",
-    url: "",
-  },
-  {
-    label: "SwipeAction",
-    url: "",
+    url: "/subpackages/pageNav/index",
   },
   {
     label: "ActionSheet",
-    url: "",
+    url: "/subpackages/actionSheet/index",
+  },
+  {
+    label: "ScrollList",
+    url: "/subpackages/scrollList/index",
+  },
+  {
+    label: "SwipeAction",
+    url: "/subpackages/swipeAction/index",
   },
 ];
+
+const getStrCharCodeAt = (str: string) => str.charCodeAt(0);
+
+/** A-Z 排序 */
+componentPageList.sort(
+  (preItem, curItem) =>
+    getStrCharCodeAt(preItem.label) - getStrCharCodeAt(curItem.label)
+);
 
 class Home extends Component {
   constructor(props) {
@@ -36,7 +44,7 @@ class Home extends Component {
 
   render() {
     return (
-      <PageContainer showMark>
+      <PageContainer>
         <View className={styles.home}>
           {componentPageList.map(({ label, url }, index) => (
             <View
