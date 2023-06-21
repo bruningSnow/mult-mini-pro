@@ -22,6 +22,10 @@ const componentPageList = [
     label: "SwipeAction",
     url: "",
   },
+  {
+    label: "ActionSheet",
+    url: "",
+  },
 ];
 
 class Home extends Component {

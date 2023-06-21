@@ -1,0 +1,38 @@
+.actionSheet-mask {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  z-index: 999999;
+  visibility: hidden;
+  opacity: 0;
+  &.actionSheet-show {
+    visibility: visible;
+    opacity: 1;
+  }
+  .actionSheet-mask-content {
+    background-color: #ffffff;
+    border-radius: 8rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    padding: 20rpx;
+    transition: height 200ms ease;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: 999999;
+
+    &.actionSheet-mask-content-show {
+      height: auto;
+      transition: height 200ms ease;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

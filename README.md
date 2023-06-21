@@ -66,6 +66,7 @@ $ yarn run dev:weapp
 - pageNav
 - scrollList
 - swipeAction
+- actionSheet
 
 ## 注意事项
 
